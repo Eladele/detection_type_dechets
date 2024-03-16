@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Protégée</title>
+</head>
+<body>
+    <h1>Contenu Protégé</h1>
+    <p>Bienvenue, {{ request.user.username }}!</p>
+    <p>Vous êtes maintenant dans une zone protégée.</p>
+    <p>Voici quelques informations spécifiques à votre compte :</p>
+    <ul>
+        <li><strong>Nom d'utilisateur:</strong> {{ request.user.username }}</li>
+        <li><strong>Email:</strong> {{ request.user.email }}</li>
+        <!-- Vous pouvez ajouter d'autres informations de profil utilisateur ici -->
+    </ul>
+    <p><a href="{% url 'logout' %}">Déconnexion</a></p>
+</body>
+</html>

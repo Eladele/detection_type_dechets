@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Détails du déchet</title>
+    <!-- Inclure Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Détails du déchet</h1>
+        <div class="card">
+            <div class="card-body">
+                <p class="card-text"><strong>Type de déchet :</strong> {{ dechet.Type_dechet }}</p>
+                <p class="card-text"><strong>Description :</strong> {{ dechet.Description }}</p>
+                <p class="card-text"><strong>Date d'ajout :</strong> {{ dechet.Date_ajout }}</p>
+                <p class="card-text"><strong>État :</strong> {{ dechet.Etat }}</p>
+                <a href="{% url 'modifier_dechet' dechet.id %}" class="btn btn-primary">Modifier</a>
+                <a href="{% url 'supprimer_dechet' dechet.id %}" class="btn btn-danger">Supprimer</a>
+                <a href="{% url 'liste_dechets' %}" class="btn btn-secondary">Retour à la liste des déchets</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inclure Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

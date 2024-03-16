@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trash Classification</title>
+    <style>
+        /* Styles CSS */
+        h1 {
+            color: blue;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 10px;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <h1>Detection de type de dechets</h1>
+    <br>
+    <p>Enter your input image:</p>
+    <form method="POST" id="form" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label>
+            <input type="file" accept="image/png, image/jpeg, image/gif" name="image"id="fileInput"/>
+        </label>
+        <input type="submit" value="Submit">
+        
+        {% if error %}
+            <p class="error"><strong>Error:</strong> {{ error }} </p>
+        {% endif %}
+    </form>
+
+    {% if answer is not none %}
+        <p><label name='answer'>Classified: {{ answer }}</label><br /></p>
+    {% endif %}
+
+    <!-- Tableau des catégories -->
+    <table>
+        <tr>
+            <th>Category</th>
+        </tr>
+        <tr>
+            <td>cardboard</td>
+        </tr>
+        <tr>
+            <td>glass</td>
+        </tr>
+        <tr>
+            <td>metal</td>
+        </tr>
+        <tr>
+            <td>paper</td>
+        </tr>
+        <tr>
+            <td>plastic</td>
+        </tr>
+    </table>
+</div>
+
+<script>
+    // JavaScript
+    document.getElementById("form").addEventListener("submit", function(event) {
+        var fileInput = document.getElementById("fileInput");
+        if (!fileInput.value) {
+            alert("Please select an image.");
+            event.preventDefault();
+        }
+    });
+</script>
+
+</body>
+</html>

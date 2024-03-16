@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liste des déchets</title>
+    <!-- Inclure Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Styles CSS personnalisés -->
+    <style>
+        body {
+            background-color: #f8f9fa; /* Couleur de fond */
+            color: #333; /* Couleur de texte principale */
+            padding-top: 50px; /* Espacement par rapport au haut de la page */
+        }
+        .container {
+            max-width: 800px; /* Largeur maximale du conteneur */
+            margin: 0 auto; /* Centrer le contenu horizontalement */
+            padding: 0 15px; /* Espacement interne du conteneur */
+        }
+        h1 {
+            color: #007bff; /* Couleur du titre */
+            margin-bottom: 20px; /* Espacement en dessous du titre */
+        }
+        ul {
+            list-style-type: none; /* Supprimer les puces de la liste */
+            padding: 0; /* Supprimer le padding de la liste */
+        }
+        li {
+            margin-bottom: 10px; /* Espacement entre chaque élément de la liste */
+        }
+        a {
+            color: #007bff; /* Couleur des liens */
+            text-decoration: none; /* Supprimer la soulignement des liens */
+        }
+        a:hover {
+            text-decoration: underline; /* Soulignement au survol des liens */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Liste des déchets</h1>
+        <ul>
+            {% for dechet in dechets %}
+                <li><a class="btn btn-primary" href="{% url 'details_dechet' dechet.id %}">{{ dechet.Type_dechet }}</a></li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'ajouter_dechet' %}" class="btn btn-primary">Ajouter un déchet</a>
+    </div>
+
+    <!-- Inclure Bootstrap JS et jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

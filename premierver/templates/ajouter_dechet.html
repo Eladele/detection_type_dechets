@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajouter un déchet</title>
+    <!-- Inclure Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Styles CSS personnalisés -->
+    <style>
+        body {
+            background-color: #f8f9fa; /* Couleur de fond */
+            color: #333; /* Couleur de texte principale */
+            padding-top: 50px; /* Espacement par rapport au haut de la page */
+        }
+        .container {
+            max-width: 800px; /* Largeur maximale du conteneur */
+            margin: 0 auto; /* Centrer le contenu horizontalement */
+            padding: 0 15px; /* Espacement interne du conteneur */
+        }
+        h1 {
+            color: #007bff; /* Couleur du titre */
+            margin-bottom: 20px; /* Espacement en dessous du titre */
+        }
+        .form-group {
+            margin-bottom: 20px; /* Espacement entre chaque groupe de champ */
+        }
+        label {
+            font-weight: bold; /* Mettre en gras les labels des champs */
+        }
+        .form-control {
+            width: 100%; /* Largeur des champs de formulaire */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ajouter un déchet</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="card">
+            <div class="form-group">
+                <label for="id_Type_dechet">Type de déchet :</label>
+                {{ form.Type_dechet }}
+            </div>
+            <div >
+                <label for="id_Description" class="card-text">Description :</label>
+                {{ form.Description }}
+            </div>
+            <div class="form-group">
+                <label for="id_Date_ajout" class="card-text">Date d'ajout :</label>
+                {{ form.Date_ajout }}
+            </div>
+            <div class="form-group">
+                <label for="id_Etat"  class="card-text">État :</label>
+                {{ form.Etat }}
+            </div>
+            <button type="submit" class="btn btn-primary">Ajouter</button>
+        </form>
+    </div>
+</div>
+    <!-- Inclure Bootstrap JS et jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

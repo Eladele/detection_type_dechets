@@ -1,0 +1,27 @@
+/* styles.css */
+/* Ajoutez vos styles personnalisés ici */
+
+/* Style pour centrer le formulaire */
+.container {
+    max-width: 400px;
+    margin: auto;
+}
+
+/* Espacement autour du formulaire */
+form {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Espacement entre les éléments du formulaire */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Style pour le bouton de connexion */
+.btn-primary {
+    width: 100%;
+}
+
+/* Ajoutez d'autres styles personnalisés au besoin */
